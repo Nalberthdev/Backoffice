@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Copiar Texto</title>
+<link rel="stylesheet" href="estilo.css">
+<script src="src/scripts.js"></script>
+    <script>
+        localStorage.setItem('nome', prompt('QUAL SEU NOME ?')) 
+    </script>
+
+<style>
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .bloco {
+    position: relative;
+    width: 200px;
+    height: 100px;
+    background-color: rgb(255, 255, 255);
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 10px;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transition: all 0.6s ease;
+}
+
+.bloco:hover {
+    background-color:  rgb(120, 124, 125);
+    color: antiquewhite;
+}
+
+.bloco:hover a {
+    color: antiquewhite;
+}
+    
+    .nome-bloco {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .texto-escondido {
+        position: absolute;
+        left: -9999px;
+    }
+
+    .glitch-wrapper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background-color: #000000;
+     }
+     
+     .glitch {
+        position: relative;
+        font-size: 72px;
+        font-weight: bold;
+        color: #FFFFFF;
+        letter-spacing: 3px;
+        z-index: 1;
+     }
+     
+     .glitch:before,
+     .glitch:after {
+        display: block;
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.8;
+     }
+     
+     .glitch:before {
+        animation: glitch-it 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+        color: #00FFFF;
+        z-index: -1;
+     }
+     
+     .glitch:after {
+        animation: glitch-it 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+        color: #FF00FF;
+        z-index: -2;
+     }
+     
+     @keyframes glitch-it {
+        0% {
+           transform: translate(0);
+        }
+        20% {
+           transform: translate(-2px, 2px);
+        }
+        40% {
+           transform: translate(-2px, -2px);
+        }
+        60% {
+           transform: translate(2px, 2px);
+        }
+        80% {
+           transform: translate(2px, -2px);
+        }
+        to {
+           transform: translate(0);
+        }
+     }
+
+     .caixa-opcoes {
+    background: #000000;
+     }
+
+     .caixa-opcoes > a {
+        color: #ffffff;
+     }
+</style>
+</head>
+<body>
+    <div class="glitch-wrapper">
+        <div class="glitch" data-text="Processamento">Processamento </div>
+     </div>
+ <br>
+ <br>
+ <div class="caixa-opcoes">
+    <a href="processamento.html">Processamento</a>
+    <a href="dfe.html">DFE, Caixa Vazia, ROP</a>
+    <a href="pagina3.html">Aparelho Bloqueado</a>
+    <a href="b2b.html">B2B</a>
+    <a href="pagina3.html">Recebeu de Outra Pessoa</a>
+    <a href="ativo.html">Ativo</a>
+    <a href="pagina3.html">E-Mail 1P</a>
+    <a href="pagina3.html">E-Mail 3P</a>
+    <a href="pagina3.html">MKT</a>
+    
+</div>
+
+<div class="container">
+    <!-- Início dos 10 blocos -->
+    <div class="bloco" onclick="copiarTexto(this)">
+        <div class="nome-bloco">Barrar entrega</div>
+        <div class="texto-escondido">
+            <p>
+                PE, por favor, barrar a entrega do Pedido Gemco: XXXXX. Houve um erro no processamento e o travesseiro está seguindo para o cliente inadvertidamente.
+            </p>
+        </div>
+    </div>
+    <div class="bloco" onclick="copiarTexto(this)">
+        <div class="nome-bloco">Cancelamento boleto/pix </div>
+        <div class="texto-escondido">
+            <p>
+                Olá, XXXX, tudo bem? 😊️<br><br>
+                
+                Peço desculpas pelo transtorno causado, não é essa experiência de compra que desejamos a você. Vim informar que já realizamos o cancelamento do seu pedido de acordo com o solicitado. O reembolso será feito na conta bancária que passou pra gente até o dia [3 dias úteis]. 💳<br><br>
+                
+                O estorno do seu crédito será feito em até 7 DIAS ÚTEIS, pois depende da data de fechamento do seu cartão. ⏳<br><br>
+                
+                Qualquer dúvida estamos à disposição, lhe desejo muita saúde, paz e proteção. 🌟<br>
+                Conte com a gente! 👍
+                <br>
+                <script>
+                    document.write(localStorage.getItem('nome'));
+                </script>
+                <br>
+                <p>BKO Equipe Magalu</p>
+            </p>
+        </div>
+    </div>
+    <div class="bloco" onclick="copiarTexto(this)">
+        <div class="nome-bloco">Cancelamento cartão </div>
+        <div class="texto-escondido">
+            <p>
+                Olá, XXXX, tudo bem? 😊️<br><br>
+                
+                Peço desculpas pelo transtorno causado, não é essa experiência de compra que desejamos a você. Vim informar que já realizamos o cancelamento do seu pedido de acordo com o solicitado. O estorno do seu crédito será feito em até 7 dias úteis. 💳<br><br>
+                
+                Qualquer dúvida estamos à disposição, lhe desejo muita saúde, paz e proteção. 🌟<br>
+                Conte com a gente! 👍  
+                <br>
+                <script>
+                    document.write(localStorage.getItem('nome'));
+                </script>
+                <br>
+                <p>BKO Equipe Magalu</p>
+            </p>
+        </div>
+    </div>
+    <div class="bloco" onclick="copiarTexto(this)">
+        <div class="nome-bloco">Falha na integração</div>
+        <div class="texto-escondido">
+            <p>
+                Olá, XXXX, sou a XXXX, tudo bem? 😊️<br><br>
+            
+                Ocorreu uma falha sistêmica em seu pedido, e consequentemente um problema no envio do mesmo, peço mil desculpas pelo transtorno causado, não é essa experiência de compra que desejamos á você, mas saiba que priorizamos a situação, por isso vim te contar que processamos seu pedido novamente.<br><br>
+            
+                A entrega está prevista para acontecer até o dia xx/xx. Esse é o prazo limite, então o produto pode chegar antes, ok?<br><br>
+            
+                Qualquer dúvida estamos à disposição, lhe desejo tudo de bom sempre. Conte com a gente!
+                <br>
+                <script>
+                    document.write(localStorage.getItem('nome'));
+                </script>
+                <br>
+                <p>BKO Equipe Magalu</p>
+            </p>
+        </div>
+    </div>
+    <div class="bloco" onclick="copiarTexto(this)">
+        <div class="nome-bloco">Oferecer similar</div>
+        <div class="texto-escondido">
+            <p>
+                Infelizmente o *********** está fora de estoque, por isso você permanecerá com o vale compras, mas te ofereço um produto similar com até 10% acima do valor. Então, caso opte por isso, escolha um do seu gosto e que seja vendido e entregue pelo Magalu, tá?! Após a escolha, é só retornar conosco 😉️.
+            </p>
+        </div>
+    </div>
+    <div class="bloco" onclick="copiarTexto(this)">
+        <div class="nome-bloco">Produto sem estoque vale ativo</div>
+        <div class="texto-escondido">
+            <p>Olá, [Nome do Cliente], 😊️</p>
+
+            <p>Espero que esteja tudo bem com você.</p>
+            
+            <p>Lamento informar que o produto <strong>[Nome do Produto]</strong> está temporariamente indisponível em nosso estoque. Pedimos desculpas por esse imprevisto e qualquer inconveniente que isso possa causar. Estamos trabalhando para resolver essa questão o mais rápido possível.</p>
+            
+            <p>Para compensar, ativamos um vale compras em seu cadastro. Você pode utilizá-lo em nossa loja online (<a href="www.magazineluiza.com.br">www.magazineluiza.com.br</a>) para adquirir outros produtos de seu interesse. O vale compras já está disponível para uso e pode ser utilizado de acordo com sua conveniência.</p>
+            
+            <p>Por favor, não hesite em nos contatar caso tenha alguma dúvida ou precise de assistência adicional. Estamos aqui para ajudar. 😉️</p>
+            
+            <p>Agradecemos pela sua compreensão e paciência. 🙏️</p> 
+            <br>
+            <script>
+                document.write(localStorage.getItem('nome'));
+            </script>
+            <br>
+            <p>BKO Equipe Magalu</p>
+        </div>
+    </div>
+    <div class="bloco" onclick="copiarTexto(this)">
+        <div class="nome-bloco">Reenvio</div>
+        <div class="texto-escondido">
+            <p>Olá, XXXX, Tudo bem? 😊️</p>
+
+            <p>Espero que esteja tudo bem com você.</p>
+
+            <p>Gostaria de informar que realizamos o reenvio do seu pedido conforme solicitado. No entanto, lamentamos informar que não conseguimos incluir o Serviço Troca Certa 12 meses novamente no processo. Por isso, o valor pago por esse serviço foi mantido como saldo em sua conta para que você possa utilizá-lo da maneira que preferir 😉️</p>
+
+            <p>A entrega do seu pedido está prevista para: [Data de Entrega Prevista]. Este é o prazo máximo estimado, mas gostaríamos de ressaltar que pode chegar antes.</p>
+
+            <p>Para selecionar um novo produto, siga os passos abaixo:</p>
+
+            <ol>
+            <li>Acesse o nosso site (<a href="www.magazineluiza.com.br">www.magazineluiza.com.br</a>) por meio de um computador, smartphone ou aplicativo.</li>
+            <li>Escolha um produto que seja "vendido e entregue por Magazine Luiza".</li>
+            <li>Adicione o produto desejado à sacola.</li>
+            <li>Escolha "Vale Compra" como forma de pagamento.</li>
+            </ol>
+
+            <p>Você também tem a opção de escolher um produto com valor superior e pagar a diferença com outro cartão ou boleto, ou então o saldo restante ficará disponível como crédito no Vale Compra para compras futuras.</p>
+
+            <p>Estamos à disposição para qualquer dúvida ou assistência adicional. Se precisar, conte conosco! 🛍️</p>
+
+            <p>Desejamos muita saúde, paz e proteção a você.</p>
+
+            <p>Atenciosamente,</p>
+            <br>
+            <script>
+                document.write(localStorage.getItem('nome'));
+            </script>
+            <br>
+            <p>BKO Equipe Magalu</p>
+        </div>
+    </div>
+    <div class="bloco" onclick="copiarTexto(this)">
+        <div class="nome-bloco">Resposta endereço do cliente</div>
+        <div class="texto-escondido">
+            <p>
+                Olá, XXXXXX, meu nome é XXXX, tudo bem?<br><br>
+                
+                Agradeço pelo retorno com a confirmação dos dados corretos, para que possamos enviar o pedido para o endereço certinho. A entrega está prevista para acontecer até o dia 0/00. Esse é o prazo limite, então o produto pode chegar antes, ok?<br><br>
+                
+                Qualquer dúvida estamos à disposição, lhe desejo muita saúde, paz e proteção.<br>
+                Conte com a gente!<br>
+                <br>
+            <script>
+                document.write(localStorage.getItem('nome'));
+            </script>
+            <br>
+            <p>BKO Equipe Magalu</p>
+            </p>
+        </div>
+    </div>
+    <div class="bloco" onclick="copiarTexto(this)">
+        <div class="nome-bloco">Saldo filial</div>
+        <div class="texto-escondido">
+            T<p>
+                Olá, XXXXX, sou a XXXXX, tudo bem? 🤗️<br><br>
+                
+                Venho te trazer ótimas notícias: Seu vale compras já está liberado e disponível para uso em loja física.<br><br>
+                
+                Qualquer dúvida entre em contato com a gente,<br>
+                Estamos à disposição!
+                <br>
+                <script>
+                    document.write(localStorage.getItem('nome'));
+                </script>
+                <br>
+                <p>BKO Equipe Magalu</p>
+            </p>
+        </div>
+    </div>
+    <div class="bloco" onclick="copiarTexto(this)">
+        <div class="nome-bloco">Solicitar endereço 1 </div>
+        <div class="texto-escondido">
+            <p>
+                Olá, xxxxxx. tudo bem?<br><br>
+                
+                Como o processo de envio será feito internamente, eu não consigo enviar para que você retire na loja, neste caso podemos te atender da seguinte forma:<br><br>
+                
+                Responda esse e-mail com um endereço válido, completo e atualizado para que seu pedido seja entregue em sua casa.<br><br>
+                
+                Rua:<br>
+                Número:<br>
+                Bairro:<br>
+                Cidade:<br>
+                Estado:<br>
+                CEP:<br>
+                Pontos de referência:<br><br>
+                
+                Aguardo seu retorno para resolvermos rapidinho e da melhor forma possível.
+                <br>
+                <script>
+                    document.write(localStorage.getItem('nome'));
+                </script>
+                <br>
+                <p>BKO Equipe Magalu</p>
+            </p>
+        </div>
+    </div>
+    <div class="bloco" onclick="copiarTexto(this)">
+        <div class="nome-bloco">Solicitar Endereço Retira Loja</div>
+        <div class="texto-escondido">
+            <p>
+                Olá, [Nome do Cliente],<br><br>
+                
+                Espero que esteja tudo bem com você.<br><br>
+                
+                Gostaria de informar que, devido à opção de "Retira Loja" selecionada durante a compra, não podemos enviar o produto diretamente para o endereço fornecido. Por favor, responda a este e-mail com um endereço válido e atualizado para que possamos garantir a entrega do seu pedido em sua casa.<br><br>
+                
+                Caso prefira, você também pode utilizar o vale compras que está liberado para fazer um novo pedido. 😊️<br><br>
+                
+                Aqui está como utilizar o vale compras:<br><br>
+                
+                - Acesse o nosso site (www.magazineluiza.com.br) por meio de um computador, smartphone ou aplicativo.<br>
+                - Escolha um novo produto que seja "vendido e entregue por Magazine Luiza".<br>
+                - Adicione o produto à sacola.<br>
+                - Escolha "Vale Compra" como forma de pagamento.<br><br>
+                
+                Você tem a opção de escolher um produto com valor superior e pagar a diferença com outro cartão ou boleto. Se preferir, o saldo restante ficará disponível como crédito no Vale Compra para compras futuras.<br><br>
+                
+                Fico no aguardo do seu retorno para que possamos providenciar a entrega do seu pedido.<br><br>
+                
+                Estamos à disposição para qualquer dúvida ou assistência adicional.<br><br>
+                
+                Atenciosamente,
+                <br>
+                <script>
+                    document.write(localStorage.getItem('nome'));
+                </script>
+                <br>
+                <p>BKO Equipe Magalu</p>
+            </p>
+            
+        </div>
+    </div>
+    <div class="bloco" onclick="copiarTexto(this)">
+        <div class="nome-bloco">Troca</div>
+        <div class="texto-escondido">
+            <p>
+                Olá, XXXX, meu nome é XXXX, tudo bem? 😊️<br><br>
+                
+                Peço mil desculpas pelo transtorno causado, não é essa experiência de compra que desejamos a você, mas saiba que priorizamos a situação, por isso vim te contar que processamos a troca de seu pedido. A entrega está prevista para acontecer até o dia xx/xx. Esse é o prazo limite, então o produto pode chegar antes, ok?!<br><br>
+                
+                Qualquer dúvida estamos à disposição, lhe desejo tudo de bom sempre. Conte com a gente!
+                <br>
+                <script>
+                    document.write(localStorage.getItem('nome'));
+                </script>
+                <br>
+                <p>BKO Equipe Magalu</p>
+            </p>
+        </div>
+    </div>
+    <div class="bloco" onclick="copiarTexto(this)">
+        <div class="nome-bloco">Troca e Serviço Vale</div>
+        <div class="texto-escondido">
+            <p>
+                Olá, [Nome do Cliente],Tudo bem?<br><br>
+                
+                Espero que esteja tudo bem com você.<br><br>
+                
+                Gostaria de informar que realizamos o reenvio do seu pedido conforme solicitado. No entanto, lamentamos informar que não conseguimos incluir o Serviço Troca Certa 12 meses novamente no processo. Como de praxe, deixamos o valor pago por esse serviço como saldo em sua conta para que você possa utilizá-lo como preferir 😉<br><br>
+                
+                A entrega do seu pedido está prevista para: [Data de Entrega Prevista]. Este é o prazo máximo estimado, mas lembramos que pode chegar antes.<br><br>
+                
+                Para selecionar um novo produto, siga os passos abaixo:<br><br>
+                
+                Acesse o nosso site (www.magazineluiza.com.br) por meio de um computador, smartphone ou aplicativo.<br>
+                Escolha um novo produto que seja "vendido e entregue por Magazine Luiza".<br>
+                Adicione o produto desejado à sacola.<br>
+                Escolha "Vale Compra" como forma de pagamento.<br>
+                Você tem a opção de escolher um produto com valor superior e pagar a diferença com outro cartão ou boleto. Se preferir, o saldo restante ficará disponível como crédito no Vale Compra para compras futuras.<br><br>
+                
+                Estamos à disposição para qualquer dúvida ou assistência adicional.<br><br>
+                
+                Desejamos muita saúde, paz e proteção a você.<br><br>
+                
+                Atenciosamente,
+                <br>
+                <script>
+                    document.write(localStorage.getItem('nome'));
+                </script>
+                <br>
+                <p>BKO Equipe Magalu</p>
+            </p>
+            
+        </div>
+    </div>
+    <div class="bloco" onclick="copiarTexto(this)">
+        <div class="nome-bloco">Vale Já Usado para Reenvio</div>
+        <div class="texto-escondido">
+            <p>
+                Olá, meu nome é XXXX, tudo bem? 😊️<br><br>
+                
+                Recebemos sua solicitação de reenvio... Mas dei uma olhadinha aqui e seu vale foi usado no pedido: [Número do Pedido], no item: [Nome do Item], utilizando parte do valor de [Valor Utilizado]. Nesse caso não conseguimos enviar o item anterior. 😔️<br><br>
+                
+                Qualquer dúvida estamos à disposição, lhe desejo muita saúde, paz e proteção. <br>
+                Conte com a gente! 👍
+                <br>
+                <script>
+                    document.write(localStorage.getItem('nome'));
+                </script>
+                <br>
+                <p>BKO Equipe Magalu</p>
+            </p>
+        </div>
+    </div>
+    <div class="bloco" onclick="copiarTexto(this)">
+        <div class="nome-bloco">Vale Liberado</div>
+        <div class="texto-escondido">
+            <p>
+                Olá, XXXXX, meu nome é XXXXX, tudo bem? 😊️<br><br>
+                
+                Disponibilizamos um vale compra no valor dos itens, olha só como é fácil de usar:<br>
+                - Acesse o nosso site (www.magazineluiza.com.br) por um computador, smartphone ou aplicativo;<br>
+                - Escolha um novo produto que seja "vendido e entregue por Magazine Luiza";<br>
+                - Adicione à sacola e escolha como forma de pagamento o "Vale Compra". Você pode escolher um produto com valor superior e pagar a diferença com outro cartão ou boleto, ou, o saldo restante ficará disponível como crédito no Vale Compra para compras futuras.<br><br>
+                
+                Qualquer dúvida estamos à disposição, lhe desejo tudo de bom sempre. Conte com a gente! 😊️
+                <br>
+                <script>
+                    document.write(localStorage.getItem('nome'));
+                </script>
+                <br>
+                <p>BKO Equipe Magalu</p>
+            </p>
+        </div>
+    </div>
+<script>
+    function copiarTexto(elemento) {
+        // Seleciona o texto dentro do elemento
+        var textoSelecionado = window.getSelection();
+        var textoElemento = elemento.querySelector('.texto-escondido');
+        var range = document.createRange();
+        range.selectNodeContents(textoElemento);
+        textoSelecionado.removeAllRanges();
+        textoSelecionado.addRange(range);
+
+        // Copia o texto selecionado
+        document.execCommand('copy');
+
+        // Limpa a seleção
+        textoSelecionado.removeAllRanges();
+
+        // Feedback para o usuário
+        alert("Texto copiado: " + textoElemento.textContent);
+    }
+</script>
+
+</body>
+</html>

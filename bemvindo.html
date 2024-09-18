@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-vindo ao Copy</title>
+    <style>
+        body {
+            font-family: "Roboto Mono", monospace;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-image: url('background.jpg'); /* fundo */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: black
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #333;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .options {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .option {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            border: 2px solid #007bff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .option:hover {
+            background-color: #007bff;
+            color:#fff;
+        }
+
+        footer {
+            margin-top: 20px;
+            color: #333;
+        }
+        
+         
+         .glitch {
+            position: relative;
+            font-size: 72px;
+            font-weight: bold;
+            color: #FFFFFF;
+            letter-spacing: 3px;
+            z-index: 1;
+         }
+         
+         .glitch:before,
+         .glitch:after {
+            display: block;
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.8;
+         }
+         
+         .glitch:before {
+            animation: glitch-it 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+            color: #00FFFF;
+            z-index: -1;
+         }
+         
+         .glitch:after {
+            animation: glitch-it 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+            color: #FF00FF;
+            z-index: -2;
+         }
+         
+         @keyframes glitch-it {
+            0% {
+               transform: translate(0);
+            }
+            20% {
+               transform: translate(-2px, 2px);
+            }
+            40% {
+               transform: translate(-2px, -2px);
+            }
+            60% {
+               transform: translate(2px, 2px);
+            }
+            80% {
+               transform: translate(2px, -2px);
+            }
+            to {
+               transform: translate(0);
+            }
+         }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="glitch" data-text="Bem vindo ao BKOPY.♋︎ ">Bem vindo ao BKOPY.♋︎</h1>
+        <p>Clique no card abaixo para ser redirecionado as filas</p>
+        <div class="options">
+            <a class="option" href="ativo.html">Filas</a>
+    
+        </div>
+    </div>
+    <footer>
+        Desenvolvido com carinho por <a href="#">Nalberth :) </a>
+    </footer>
+
+    
+</body>
+</html>

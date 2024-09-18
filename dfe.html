@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Copiar Texto</title>
+<link rel="stylesheet" href="estilo.css">
+<script src="src/scripts.js"></script>
+    <script>
+        localStorage.setItem('nome', prompt('QUAL SEU NOME ?')) 
+    </script>
+
+<style>
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .bloco {
+    position: relative;
+    width: 200px;
+    height: 100px;
+    background-color: rgb(255, 255, 255);
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 10px;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transition: all 0.6s ease;
+}
+
+.bloco:hover {
+    background-color:  rgb(120, 124, 125);
+    color: antiquewhite;
+}
+
+.bloco:hover a {
+    color: antiquewhite;
+}
+    
+    .nome-bloco {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .texto-escondido {
+        position: absolute;
+        left: -9999px;
+    }
+
+    .glitch-wrapper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background-color: #000000;
+     }
+     
+     .glitch {
+        position: relative;
+        font-size: 72px;
+        font-weight: bold;
+        color: #FFFFFF;
+        letter-spacing: 3px;
+        z-index: 1;
+     }
+     
+     .glitch:before,
+     .glitch:after {
+        display: block;
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.8;
+     }
+     
+     .glitch:before {
+        animation: glitch-it 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+        color: #00FFFF;
+        z-index: -1;
+     }
+     
+     .glitch:after {
+        animation: glitch-it 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+        color: #FF00FF;
+        z-index: -2;
+     }
+     
+     @keyframes glitch-it {
+        0% {
+           transform: translate(0);
+        }
+        20% {
+           transform: translate(-2px, 2px);
+        }
+        40% {
+           transform: translate(-2px, -2px);
+        }
+        60% {
+           transform: translate(2px, 2px);
+        }
+        80% {
+           transform: translate(2px, -2px);
+        }
+        to {
+           transform: translate(0);
+        }
+     }
+
+     .caixa-opcoes {
+    background: #000000;
+     }
+
+     .caixa-opcoes > a {
+        color: #ffffff;
+     }
+</style>
+</head>
+<body>
+    <div class="glitch-wrapper">
+        <div class="glitch" data-text="DFE, ROP, CAIXA VAZIA">DFE, ROP, CAIXA VAZIA</div>
+     </div>
+ <br>
+ <br>
+ <div class="caixa-opcoes">
+    <a href="processamento.html">Processamento</a>
+    <a href="dfe.html">DFE, Caixa Vazia, ROP</a>
+    <a href="pagina3.html">Aparelho Bloqueado</a>
+    <a href="b2b.html">B2B</a>
+    <a href="pagina3.html">Recebeu de Outra Pessoa</a>
+    <a href="ativo.html">Ativo</a>
+    <a href="pagina3.html">E-Mail 1P</a>
+    <a href="pagina3.html">E-Mail 3P</a>
+    <a href="pagina3.html">MKT</a>
+    
+</div>
+
+<div class="container">
+    <!-- Início dos 10 blocos -->
+    <div class="bloco" onclick="copiarTexto(this)">
+        <div class="nome-bloco">Acionar Filial</div>
+        <div class="texto-escondido">
+            <p>
+                Olá, Filial, tudo bem? 😊<br><br>
+                
+                Cliente comprou o produto XXX, com a modalidade de entrega SFS, porém cliente recebeu o produto XXX, sendo diferente do escolhido. 😔<br><br>
+                
+                Por gentileza, entrar em contato com o cliente e realizar a troca do produto. 🔄<br><br>
+                
+                Pedido: XXX<br>
+                Produto: XXXX<br><br>
+                
+                Como o pedido foi de entrega SFS, é necessário que a filial realize a coleta e a entrega na casa do cliente. 🚚🏠<br><br>
+                
+                Ficamos no aguardo! 🕒
+                <br>
+                <script>
+                    document.write(localStorage.getItem('nome'));
+                </script>
+                <p>BKO Equipe Magalu</p>
+            </p>
+        </div>
+    </div>
+    <div class="bloco" onclick="copiarTexto(this)">
+        <div class="nome-bloco">Acionar CE</div>
+        <div class="texto-escondido">
+            CE, poderia verificar este caso por favor?
+            detalhes:
+        </div>
+    </div>
+    <div class="bloco" onclick="copiarTexto(this)">
+        <div class="nome-bloco">Caixa Vazia sem dados</div>
+        <div class="texto-escondido">
+            <p>
+                Olá, xxxx, tudo bem? 😊<br><br>
+                
+                Agradeço as informações que você me enviou, sei que é um momento muito difícil, porém elas estão insuficientes para que eu possa fazer uma análise do que aconteceu. Portanto, ainda preciso do seguinte: 📸📦📹<br><br>
+                
+                - Fotos das etiquetas do Magalu, que constam seu nome ou de outra pessoa, número do pedido e endereço, estão coladas na embalagem de transporte. 🏷️<br>
+                - Fotos de todos os lados da embalagem do Magalu e também do produto. 📦<br>
+                - Fotos nítidas do código de barras do fabricante, geralmente está impresso diretamente na embalagem principal do produto, a do fabricante, começando por 789. 📝<br>
+                - Pergunta: A caixa do Magalu e do produto estava violada? 🔍<br>
+                - Detalhe a diferença observada entre o produto entregue e o produto pedido. 🔍<br>
+                - Videos da caixa de como chegou. 📹<br><br>
+                
+                Aguardo seu retorno. 🕒
+                <br>
+                <script>
+                    document.write(localStorage.getItem('nome'));
+                </script>
+                <p>BKO Equipe Magalu</p>
+            </p>
+        </div>
+    </div>
+    <div class="bloco" onclick="copiarTexto(this)">
+        <div class="nome-bloco">Dados insuficientes</div>
+        <div class="texto-escondido">
+            <p>
+                Olá, xxxx, tudo bem? 😊<br><br>
+                
+                Agradeço as informações que você me enviou, porém elas estão insuficientes para que eu possa fazer uma análise do que aconteceu, assim ainda preciso do seguinte: 📸📦<br><br>
+                
+                - Fotos das etiquetas do Magalu, que constam seu nome ou de outra pessoa, número do pedido e endereço, estão coladas na embalagem de transporte. 🏷️<br>
+                - Fotos de todos os lados da embalagem do Magalu e também do produto. 📦<br>
+                - Fotos nítidas do código de barras do fabricante, geralmente está impresso diretamente na embalagem principal do produto, a do fabricante, começando por 789. 📝<br>
+                - Pergunta: A caixa do Magalu e do produto estava violada? 🔍<br>
+                - Detalhe a diferença observada entre o produto entregue e o produto pedido. 🔍<br><br>
+                
+                Aguardo seu retorno. 🕒
+                <br>
+                <script>
+                    document.write(localStorage.getItem('nome'));
+                </script>
+                <p>BKO Equipe Magalu</p>
+            </p>
+        </div>
+    </div>
+    <div class="bloco" onclick="copiarTexto(this)">
+        <div class="nome-bloco">Destrocar PE</div>
+        <div class="texto-escondido">
+            <p>
+                Conforme identificado, houve uma troca indevida de volumes entre os clientes XXXXXX (Pacote XXXX) e XXXXX (Pacote XXXXX), que residem na mesma cidade - XXXXX. 🔄<br><br>
+                
+                A transportadora responsável foi a XXXXX. 🚚<br><br>
+                
+                Solicitamos, por gentileza, a destroca imediata das mercadorias, a fim de garantir a entrega correta para cada cliente. 📦<br><br>
+            </p>
+        </div>
+    </div>
+    <div class="bloco" onclick="copiarTexto(this)">
+        <div class="nome-bloco">EAN SEM DADOS</div>
+        <div class="texto-escondido">
+            <p>
+                Olá, XXXX. Tudo bem? 😊<br><br>
+                
+                Olha, eu sinto muito que isso tenha acontecido, mas não se preocupe, vou cuidar para isso ser resolvido. 🛠️<br><br>
+                
+                Preciso do código EAN que geralmente começa com 789, essa etiqueta fica localizada na embalagem do produto. 🏷️<br><br>
+                
+                Exemplos:<br>
+                Código de barras EAN exemplos:<br><br>
+                
+                II   IIII          II  II  IIII  II  II  IIII II<br>
+                II   IIII          II  II  IIII  II  II  IIII II<br>
+                II   IIII          II  II  IIII  II  II  IIII II<br>
+                II   IIII          II  II  IIII  II  II  IIII II<br>
+                II   IIII          II  II  IIII  II  II  IIII II<br>
+                II   IIII          II  II  IIII  II  II  IIII II<br><br>
+                
+                       7  8  9  8  3  5  7  4  1  7  8  9  2 📊
+                <br>
+                <script>
+                    document.write(localStorage.getItem('nome'));
+                </script>
+                <p>BKO Equipe Magalu</p>
+            </p> 
+        </div>
+    </div>
+    <div class="bloco" onclick="copiarTexto(this)">
+        <div class="nome-bloco">Erro de anúncio</div>
+        <div class="texto-escondido">
+            <p>
+                Olá, XXXX, Tudo bem? 😊<br><br>
+                
+                Desde já peço desculpas pelo transtorno. 🙏<br><br>
+                
+                O motivo do meu contato é referente ao pedido XXXXXX. 📦<br><br>
+                
+                Entendendo sua insatisfação, proponho os seguintes atendimentos:<br><br>
+                
+                1- Vale Compra: Com ele você pode escolher qualquer outro produto no site que seja vendido e entregue pela Magazine Luiza. Se for um produto com valor maior do que o disponível, é possível pagar a diferença. 💳<br>
+                
+                2- Cancelamento: Eu solicito, será feito o estorno ou restituição, dependendo da forma de pagamento. 💰<br><br>
+                
+                Qual dessas opções seria melhor para você?! 🤔<br><br>
+                
+                Aguardo seu retorno. 🕒
+                <br>
+                <script>
+                    document.write(localStorage.getItem('nome'));
+                </script>
+                <p>BKO Equipe Magalu</p>
+            </p>
+        </div>
+    </div>
+    <div class="bloco" onclick="copiarTexto(this)">
+        <div class="nome-bloco">Fora do prazo de 7 dias</div>
+        <div class="texto-escondido">
+            <p>
+                Olá, XXXX! Espero que esteja tudo bem com você. 😊<br><br>
+                
+                Lamentamos muito pelo ocorrido! 😔<br><br>
+                
+                Gostaríamos de lembrar que o prazo para reclamação de produtos avariados, com divergências, insatisfação ou faltando peças é de até 7 dias após a entrega. É importante conferir o produto no momento da entrega para garantir sua satisfação. No seu caso, o produto foi entregue no dia XXXXXX e o atendimento foi aberto no dia XXXXX, ou seja, fora do prazo estabelecido. 📦⏰<br><br>
+                
+                Nesse caso, sugerimos que entre em contato diretamente com o fabricante do produto. Eles poderão lhe fornecer a assistência necessária. 🛠️<br><br>
+                
+                Se tiver mais alguma dúvida ou precisar de qualquer outra informação, estaremos à disposição para ajudar. 💬
+                <br>
+                <script>
+                    document.write(localStorage.getItem('nome'));
+                </script>
+                <br>
+                <p>BKO Equipe Magalu</p>
+        </div>
+    </div>
+    <div class="bloco" onclick="copiarTexto(this)">
+        <div class="nome-bloco">Formato invalido de imagem</div>
+        <div class="texto-escondido">
+            <p>
+                Olá, XXX. Tudo bem? 😊<br><br>
+                
+                Espero que esteja tudo bem. Gostaria de agradecer por enviar as fotos para realizarmos seu atendimento. No entanto, parece que as imagens, que estão no formato atual, não são totalmente compatíveis com nossas necessidades de produção. 📷<br><br>
+                
+                Para garantir a melhor qualidade e eficiência no trabalho, gostaríamos de solicitar que, por gentileza, enviasse as fotos em um formato diferente. Recomendamos formatos como JPEG, PNG ou TIFF, pois são mais compatíveis com nossos sistemas e processos de trabalho. 🖼️<br><br>
+                
+                Caso esteja enfrentando dificuldades para converter as imagens para outro formato, por favor, não hesite em nos informar. Estamos aqui para ajudar e garantir que o processo seja o mais suave possível. 🤝<br><br>
+                
+                Agradecemos sua compreensão e cooperação neste assunto. Por favor, envie as fotos em um formato alternativo o mais rápido possível para que possamos dar continuidade ao projeto conforme o planejado. 🔄<br><br>
+                
+                Se precisar de alguma assistência adicional ou tiver alguma dúvida, não hesite em entrar em contato. 📞<br><br>
+                
+                Agradecemos sua atenção e colaboração. 🙏
+                <br>
+                <script>
+                    document.write(localStorage.getItem('nome'));
+                </script>
+                <br>
+                <p>BKO Equipe Magalu</p>
+            </p>
+        </div>
+    </div>
+    <div class="bloco" onclick="copiarTexto(this)">
+        <div class="nome-bloco">Pedir para aguardar</div>
+        <div class="texto-escondido">
+            <p>
+                Olá, XXX! Como você está? 😊<br><br>
+                
+                Gostaria de informar que já entramos em contato com o setor responsável para analisar as imagens e proceder com a troca do produto. 🔄<br><br>
+                
+                Fique tranquila, pois o prazo para receber uma resposta é até o dia XXXXX. 📅<br><br>
+                
+                Se surgir alguma dúvida, estou aqui para ajudar! 🛠️
+                <br>
+                <script>
+                    document.write(localStorage.getItem('nome'));
+                </script>
+                <br>
+                <p>BKO Equipe Magalu</p>
+            </p>
+        </div>
+    </div>
+    <div class="bloco" onclick="copiarTexto(this)">
+        <div class="nome-bloco">Resgate Já</div>
+        <div class="texto-escondido">
+            <p>
+                Olá, XXX. Tudo bem? 😊<br><br>
+                
+                Sentimos muito pelo ocorrido! 😔<br><br>
+                
+                Nesse caso, iremos realizar a devolução do valor em conta. Por gentileza, poderia nos encaminhar os dados abaixo:<br><br>
+                
+                Banco:<br>
+                Agência:<br>
+                Conta (corrente/ poupança):<br>
+                Nome Completo:<br>
+                CPF do titular:<br><br>
+                
+                Assim que recebermos os dados, realizaremos a restituição em até 3 dias úteis. Aguardamos seu retorno para darmos andamento em sua solicitação, ok? 😉<br><br>
+                
+                Qualquer dúvida, estamos à disposição! 💬
+                <br>
+                <script>
+                    document.write(localStorage.getItem('nome'));
+                </script>
+                <br>
+                <p>BKO Equipe Magalu</p>
+            </p>
+        </div>
+    </div>
+    <div class="bloco" onclick="copiarTexto(this)">
+        <div class="nome-bloco">Resgate Já - oferecer</div>
+        <div class="texto-escondido">
+            <p>
+                Olá, XXXX! Espero que esteja tudo bem com você! 😊<br><br>
+                
+                Podemos estar disponibilizando o valor de R$XXX para auxiliá-lo com os reparos necessários em sua residência. 💰<br><br>
+                
+                Para procedermos com o depósito, precisamos que nos forneça as seguintes informações: 🏦<br>
+                
+                Banco: <br>
+                Agência: <br>
+                Conta (corrente/ poupança): <br>
+                Nome Completo: <br>
+                CPF do titular: <br><br>
+                
+                Assim que recebermos os dados realizaremos a restituição em até 3 dias úteis. 📅<br>
+                
+                Aguardamos seu retorno para darmos andamento em sua solicitação, ok? 😉<br><br>
+                
+                Qualquer dúvida, estamos à disposição! 🛠️
+                <br>
+                <script>
+                    document.write(localStorage.getItem('nome'));
+                </script>
+                <br>
+                <p>BKO Equipe Magalu</p>
+            </p>
+        </div>
+    </div>
+    <div class="bloco" onclick="copiarTexto(this)">
+        <div class="nome-bloco">Troca Postagem</div>
+        <div class="texto-escondido">
+            <p>
+                Olá, XXXX, tudo bem? 😊<br><br>
+                
+                Temos uma ótima notícia! 🎉<br><br>
+                
+                A troca do seu produto foi autorizada. 🔄<br><br>
+                
+                Você deve levar o produto até dia xxxxxx aos correios com o código de postagem xxxxxxxxxxxx, para o envio do produto para ser feita a troca. Não terá custo nenhum com o envio. 📦🚚<br><br>
+                
+                O produto com defeito será enviado para nosso centro de distribuição. Assim que recebermos um novo produto será faturado e enviado ao seu endereço. O prazo para o recebimento do novo produto é até XXXXX. ⏳<br><br>
+                
+                Caso o endereço tenha mudado e não é mais o de entrega, não poste e nos informe para ser feita a alteração. 🏠<br><br>
+                
+                Dúvida de como deve estar produto para devolução postagem:<br>
+                Pode ser em outra embalagem, mas siga as orientações abaixo:<br>
+                - Leve o produto lacrado, envolvido em papel liso e resistente, até a agência dos Correios;<br>
+                - Mantenha o produto, acessórios e manuais (se houver) na embalagem;<br>
+                - É importante que o item esteja na embalagem original. Mas se não estiver, pode utilizar outra caixa, desde que seja devidamente lacrada. Procure acomodar o produto para não sofrer avarias. 📦✉️<br><br>
+                
+                Se optar pela embalagem dos correios, o custo é por conta do cliente. 💸<br><br>
+                
+                Qualquer dúvida estamos à disposição. 💬
+                <br>
+                <script>
+                    document.write(localStorage.getItem('nome'));
+                </script>
+                <br>
+                <p>BKO Equipe Magalu</p>
+            </p>
+        </div>
+    </div>
+    <div class="bloco" onclick="copiarTexto(this)">
+        <div class="nome-bloco">Troca coleta</div>
+        <div class="texto-escondido">
+            <p>
+                Olá, tudo bem? 😊<br><br>
+                
+                Temos uma ótima notícia! 🎉<br><br>
+                
+                A troca do seu produto foi autorizada. 🔄<br><br>
+                
+                A coleta do produto deve acontecer até xxxxxxxxxxxxxxx, no mesmo endereço de entrega. O produto deve estar desmontado e embalado para ocorrer a coleta, lembrando que não é necessário ser embalado em embalagem original. 📦<br><br>
+                
+                A empresa não trabalha com troca simultânea, o produto com defeito deve ser coletado primeiro para depois o envio do novo produto. Após a coleta, o produto com defeito é direcionado para nosso centro de distribuição. Assim que chegar lá, um novo produto será faturado e encaminhado para seu endereço. 🚚<br><br>
+                
+                Caso o endereço não seja mais o endereço em que o produto foi entregue, informar imediatamente. 🏠<br><br>
+                
+                Qualquer dúvida estamos à disposição. 🤔
+                <br>
+                <script>
+                    document.write(localStorage.getItem('nome'));
+                </script>
+                <br>
+                <p>BKO Equipe Magalu</p>
+            </p>
+        </div>
+    </div>
+    <div class="bloco" onclick="copiarTexto(this)">
+        <div class="nome-bloco">Vale compras Postagem</div>
+        <div class="texto-escondido">
+            <p>
+                Olá, XXXX, tudo bem? 😊<br><br>
+                
+                A troca do seu produto foi autorizada! 🔄<br><br>
+                
+                Vamos gerar um vale-compra no valor pago pelo produto para seguir com a troca. 💳<br><br>
+                
+                Você deve levar o produto até dia xxxxxx aos correios com o código de postagem xxxxxxxxxxxx, e em até dois dias úteis após o envio o vale-compra vai estar disponível para utilização no aplicativo, lembrando que o mesmo ficará disponível por até 90 dias, assim você pode escolher seu novo produto com calma. 📦<br><br>
+                
+                Veja como é bem fácil utilizar o vale-compra:
+                <ul>
+                    <li>O produto que está com você deverá ser devolvido para ser liberado o valor da compra;</li>
+                    <li>Escolha um produto que seja vendido e entregue pelo Magazine Luiza;</li>
+                    <li>Na hora de escolher a forma de pagamento, o seu vale-compra vai aparecer automaticamente como uma opção, daí é só selecionar;</li>
+                    <li>Se o produto que escolher tiver valor superior ao do vale, você consegue pagar a diferença no cartão de crédito;</li>
+                    <li>Se o produto que escolher tiver valor inferior ao do vale, você ainda ficará com o saldo para comprar outros produtos ou fazer um novo pedido.</li>
+                </ul><br>
+                
+                <strong>Dúvida de como deve estar o produto para devolução via postagem:</strong>
+                <ul>
+                    <li>Pode ser em outra embalagem, mas siga as orientações abaixo:</li>
+                    <li>Leve o produto lacrado, envolvido em papel liso e resistente, até a agência dos Correios;</li>
+                    <li>Mantenha o produto, acessórios e manuais (se houver) na embalagem;</li>
+                    <li>É importante que o item esteja na embalagem original. Mas se não estiver, pode utilizar outra caixa, desde que seja devidamente lacrada. Procure acomodar o produto para não sofrer avarias.</li>
+                </ul><br>
+                
+                Se optar pela embalagem dos correios, o custo é por conta do cliente. 💸<br><br>
+                
+                Qualquer dúvida estamos à disposição. 💬
+                <br>
+                <script>
+                    document.write(localStorage.getItem('nome'));
+                </script>
+                <br>
+                <p>BKO Equipe Magalu</p>
+            </p>
+        </div>
+    </div>
+    <div class="bloco" onclick="copiarTexto(this)">
+        <div class="nome-bloco">Vale Compras Coleta</div>
+        <div class="texto-escondido">
+            <p>
+                Olá, XXXX, tudo bem? 😊<br><br>
+                
+                A troca do seu produto foi autorizada! 🔄<br><br>
+                
+                Lamentamos o ocorrido, e infelizmente não temos o mesmo produto em estoque. Vamos gerar um vale-compra no valor pago pelo produto para seguir com a troca. 🛍️<br><br>
+                
+                A coleta do produto deve acontecer até xxxxxxxxxxxxxxx, no mesmo endereço de entrega. Após a coleta, em até dois dias úteis, o vale-compra estará disponível no aplicativo para uma nova compra. 📦📱<br><br>
+                
+                Olha só como é fácil usar seu vale-compra:<br>
+                - Após a análise, o prazo para liberação do vale-compras são de 2 dias;<br>
+                - O produto que está com você deverá ser devolvido para ser liberado o valor da compra;<br>
+                - Escolha um produto que seja vendido e entregue pelo Magazine Luiza;<br>
+                - Na hora de escolher a forma de pagamento, o seu vale-compra vai aparecer automaticamente como uma opção, daí é só selecionar;<br>
+                - Se o produto que escolher tiver valor superior ao do vale, você consegue pagar a diferença no cartão de crédito;<br>
+                - Se o produto que escolher tiver valor inferior ao do vale, você ainda ficará com o saldo para comprar outros produtos ou fazer um novo pedido. 💳💸<br><br>
+                
+                Qualquer dúvida estamos à disposição. 💬
+                <br>
+                <script>
+                    document.write(localStorage.getItem('nome'));
+                </script><br>
+                <p>BKO Equipe Magalu</p>
+            </p>
+        </div>
+    </div>  
+</div>
+<script>
+    function copiarTexto(elemento) {
+        // Seleciona o texto dentro do elemento
+        var textoSelecionado = window.getSelection();
+        var textoElemento = elemento.querySelector('.texto-escondido');
+        var range = document.createRange();
+        range.selectNodeContents(textoElemento);
+        textoSelecionado.removeAllRanges();
+        textoSelecionado.addRange(range);
+
+        // Copia o texto selecionado
+        document.execCommand('copy');
+
+        // Limpa a seleção
+        textoSelecionado.removeAllRanges();
+
+        // Feedback para o usuário
+        alert("Texto copiado: " + textoElemento.textContent);
+    }
+</script>
+
+</body>
+</html>
